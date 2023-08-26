@@ -4,8 +4,14 @@
   "description": "Compiler API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js"
   },
   "author": "Ahmed Atigui",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.0"
+  }
 }
