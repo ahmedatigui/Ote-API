@@ -9,7 +9,10 @@ const init = async () => {
 
     const server = Hapi.server({
         port: 3000,
-        host: 'localhost'
+        host: 'localhost',
+        routes: {
+            cors: true
+        }
     });
 
     // Routes
@@ -37,9 +40,9 @@ const init = async () => {
               console.log(ret, typeof ret);
               const cd = await compile(ret.lang, ret.input, ret.code);
               console.log("CD: ", cd);
-              return {status:'200', res: cd};
+              return h.response({status:'200', response: cd}).code(200);
             }
-        }                                       
+        }                                   
     });
 
     server.route({
