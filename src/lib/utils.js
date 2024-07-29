@@ -1,12 +1,20 @@
-const fs = require('fs');
-const { join } = require('path');
-const { spawnSync, execSync } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
+// const fs = require('fs');
+// const { join } = require('path');
+// const { spawnSync, execSync } = require('child_process');
+// const { v4: uuidv4 } = require('uuid');
 
-const { commandMap } = require('./commands');
+// const { commandMap } = require('./commands');
+
+import fs from 'node:fs';
+import { join } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { v4 as uuidv4 } from 'uuid';
+
+import { commandMap } from './commands.js';
+
 
 // Create a file
-const createFile = async (file, content, extension) => {
+export const createFile = async (file, content, extension) => {
   const filepath = join(process.cwd(), 'codes');
   const filename_id = uuidv4();
   const filename = `${file}${filename_id}`;
@@ -30,7 +38,7 @@ const createFile = async (file, content, extension) => {
 };
 
 // Execute a file
-const execFile = async (filename, lang, input) => {
+export const execFile = async (filename, lang, input) => {
   const {
     compileCodeCommand,
     compilationArgs,
@@ -58,7 +66,7 @@ const execFile = async (filename, lang, input) => {
 };
 
 // Run a file
-const runFile = async (file, content, lang, input) => {
+export const runFile = async (file, content, lang, input) => {
   const fileres = await createFile(file, content, lang);
 
   const result = await execFile(fileres.filename, lang, input);
@@ -69,7 +77,7 @@ const runFile = async (file, content, lang, input) => {
 };
 
 // Delete a file
-const deleteFile = async (filename, lang, extension = undefined) => {
+export const deleteFile = async (filename, lang, extension = undefined) => {
   const codeFile = join(process.cwd(), `codes/${filename}.${lang}`);
   const outputFile = extension
     ? join(process.cwd(), `outputs/${filename}.${extension}`)
@@ -83,4 +91,4 @@ const deleteFile = async (filename, lang, extension = undefined) => {
   }
 };
 
-module.exports = { createFile, execFile, runFile, deleteFile };
+// module.exports = { createFile, execFile, runFile, deleteFile };

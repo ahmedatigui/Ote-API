@@ -2,16 +2,20 @@
   "name": "ote-api",
   "version": "1.0.0",
   "description": "Compiler API",
-  "main": "index.js",
+  "type": "module",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./src/index.js",
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ahmed Atigui",
   "license": "ISC",
   "dependencies": {
-    "@hapi/hapi": "^21.3.2",
-    "nodemon": "^3.0.1",
-    "uuid": "^9.0.0"
+    "@hapi/hapi": "^21.3.10",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }
