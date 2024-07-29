@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports:
+      - 3000:3000
+    command: npm start
+
+    develop:
+      watch:
+        - path: ./src/
+          target: /api/src/
+          action: sync
+
+        - path: package*.json
+          action: rebuild
