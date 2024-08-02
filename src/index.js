@@ -1,9 +1,10 @@
-'use strict';
+// const Hapi = require('@hapi/hapi');
+// const { supportedLanguages } = require('./lib/commands');
+// const { compile } = require('./compile');
+import * as Hapi from '@hapi/hapi';
+import { compile } from './compile.js';
+import { supportedLanguages } from './lib/commands.js';
 
-const Hapi = require('@hapi/hapi');
-
-const { supportedLanguages } = require('./lib/commands');
-const { compile } = require('./compile');
 
 const init = async () => {
   const server = Hapi.server({
@@ -19,7 +20,7 @@ const init = async () => {
     method: 'GET',
     path: '/',
     handler: (request, h) => {
-      return 'Hello World!';
+      return 'Hello Ote!';
     },
   });
 
