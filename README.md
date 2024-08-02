@@ -31,7 +31,7 @@ Where:
 
     ```
 
-- `GET /list`: Returns a list of supported languages: 'java', 'cpp', 'py', 'c', 'go', 'cs'.
+- `GET /list`: Returns a list of supported languages: 'cpp', 'py', 'c', 'go', 'cs'.
 - `* /{any*}`: Returns a 404 error for any undefined routes.
 
 
