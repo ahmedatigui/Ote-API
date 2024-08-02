@@ -11,7 +11,6 @@ RUN apt-get update && \
     python3 \
     golang \
     mono-complete \
-    openjdk-11-jdk \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -19,14 +18,7 @@ RUN apt-get update && \
 WORKDIR /api
 
 COPY package*.json .
-RUN node -v
-RUN npm -v
-RUN cat /etc/os-release
-RUN curl -V
-RUN gcc --version
-RUN g++ --version
-RUN python3 -V
-RUN go version
+
 RUN npm install
 
 COPY . .
