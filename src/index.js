@@ -11,8 +11,13 @@ const init = async () => {
     port: 3000,
     host: 'localhost',
     routes: {
-      cors: true,
-    },
+        cors: {
+	        origin: ['https://ote.ahmedatigui.com'],
+      	},
+    	  payload: {
+	        allow: ['application/json', 'application/*+json'],
+      	},
+    }
   });
 
   // Routes

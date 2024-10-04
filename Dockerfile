@@ -10,7 +10,6 @@ RUN apt-get update && \
     g++ \
     python3 \
     golang \
-    mono-complete \
     && apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

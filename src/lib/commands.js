@@ -80,6 +80,6 @@ export const commandMap = (jobID, language) => {
     }
 }
 
-export const supportedLanguages = ['cpp', 'py', 'c', 'go', 'cs'];
+export const supportedLanguages = ['cpp', 'py', 'c', 'go'];
 
 // module.exports = {commandMap, supportedLanguages}
